@@ -23,13 +23,14 @@ const Bottomselect = () => {
         }}
         size="small"
       >
-        <Input size="md" placeholder="Search" />
+        <Input size="md" name="search" placeholder="Search" />
       </FormControl>
       <div className=" container">
         <div className="values-wrapper">
           <span>Price :</span>
           <input
             type="number"
+            name="minPrice"
             id="minPrice"
             value={values[0]}
             onChange={(e) => handleChange([+e.target.value, values[1]])}
@@ -37,6 +38,7 @@ const Bottomselect = () => {
           <span>-</span>
           <input
             type="number"
+            name="maxPrice"
             id="maxPrice"
             value={values[1]}
             onChange={(e) => handleChange([values[0], +e.target.value])}
@@ -51,7 +53,7 @@ const Bottomselect = () => {
           max={10000000}
         />
       </div>
-      <input type="date" defaultValue={date} />
+      <input type="date" name="date" defaultValue={date} />
     </div>
   );
 };

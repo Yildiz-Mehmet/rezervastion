@@ -9,12 +9,7 @@ import Rating from "@mui/material/Rating";
 import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import "./Select.css";
 
-const Middleselect = () => {
-  const [age, setAge] = React.useState("");
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+const Middleselect = ({ setForm, form }) => {
   const [value, setValue] = React.useState(2);
 
   return (
@@ -24,16 +19,18 @@ const Middleselect = () => {
         <Select
           labelId="demo-select-small-label"
           id="demo-select-small"
-          value={age}
-          label="Age"
-          onChange={handleChange}
+          name="rent_sale"
+          value={form.rent_sale}
+          label="rent_sale"
+          onChange={(e) => {
+            form.rent_sale = e.target.value;
+          }}
         >
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value="Rent">Rent</MenuItem>
+          <MenuItem value="Sale">Sale</MenuItem>
         </Select>
       </FormControl>
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
@@ -41,9 +38,12 @@ const Middleselect = () => {
         <Select
           labelId="demo-select-small-label"
           id="demo-select-small"
-          value={age}
-          label="Age"
-          onChange={handleChange}
+          name="country"
+          value={form.country}
+          label="country"
+          onChange={(e) => {
+            form.country = e.target.value;
+          }}
         >
           <MenuItem value="">
             <em>None</em>
@@ -58,9 +58,12 @@ const Middleselect = () => {
         <Select
           labelId="demo-select-small-label"
           id="demo-select-small"
-          value={age}
+          name="state"
+          value="age"
           label="Age"
-          onChange={handleChange}
+          onChange={(e) => {
+            form.state = e.target.value;
+          }}
         >
           <MenuItem value="">
             <em>None</em>
@@ -75,9 +78,12 @@ const Middleselect = () => {
         <Select
           labelId="demo-select-small-label"
           id="demo-select-small"
-          value={age}
+          name="room"
+          value="age"
           label="Age"
-          onChange={handleChange}
+          onChange={(e) => {
+            form.room = e.target.value;
+          }}
         >
           <MenuItem value="">
             <em>None</em>
@@ -90,7 +96,7 @@ const Middleselect = () => {
 
       <Rating
         sx={{ paddingY: "17px" }}
-        name="simple-controlled"
+        name="rating"
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
@@ -104,6 +110,10 @@ const Middleselect = () => {
         <FormControlLabel
           sx={{ marginBottom: "15px", marginLeft: "5px" }}
           control={<Checkbox />}
+          onClick={() => {
+            setForm(!form.control);
+          }}
+          name="control"
           label="ReSale"
         />
       </FormGroup>
