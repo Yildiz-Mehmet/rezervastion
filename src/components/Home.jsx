@@ -4,6 +4,7 @@ import Slideshow from "./Slideshow";
 import Header from "../components/header/Header";
 import "../components/header/Select.css";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Navbar />
       <Slideshow />
       <Header />
+      <Footer />
     </div>
   );
 };
