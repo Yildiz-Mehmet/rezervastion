@@ -7,6 +7,8 @@ import Select from "@mui/material/Select";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
+import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
+import "./Select.css";
 
 const Middleselect = () => {
   const [age, setAge] = React.useState("");
@@ -17,9 +19,9 @@ const Middleselect = () => {
   const [value, setValue] = React.useState(2);
 
   return (
-    <div>
+    <div className="middle">
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-        <InputLabel id="demo-select-small-label">Age</InputLabel>
+        <InputLabel id="demo-select-small-label">Rent/Sale</InputLabel>
         <Select
           labelId="demo-select-small-label"
           id="demo-select-small"
@@ -36,7 +38,7 @@ const Middleselect = () => {
         </Select>
       </FormControl>
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-        <InputLabel id="demo-select-small-label">Age</InputLabel>
+        <InputLabel id="demo-select-small-label">Country</InputLabel>
         <Select
           labelId="demo-select-small-label"
           id="demo-select-small"
@@ -53,7 +55,7 @@ const Middleselect = () => {
         </Select>
       </FormControl>
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-        <InputLabel id="demo-select-small-label">Age</InputLabel>
+        <InputLabel id="demo-select-small-label">State</InputLabel>
         <Select
           labelId="demo-select-small-label"
           id="demo-select-small"
@@ -70,7 +72,7 @@ const Middleselect = () => {
         </Select>
       </FormControl>
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-        <InputLabel id="demo-select-small-label">Age</InputLabel>
+        <InputLabel id="demo-select-small-label">Room</InputLabel>
         <Select
           labelId="demo-select-small-label"
           id="demo-select-small"
@@ -88,13 +90,24 @@ const Middleselect = () => {
       </FormControl>
 
       <Rating
-        sx={{ paddingX: "3px" }}
+        sx={{ paddingY: "17px" }}
         name="simple-controlled"
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
         }}
       />
+      <FormGroup
+        sx={{
+          display: "inline",
+        }}
+      >
+        <FormControlLabel
+          sx={{ marginBottom: "15px", marginLeft: "5px" }}
+          control={<Checkbox />}
+          label="ReSale"
+        />
+      </FormGroup>
     </div>
   );
 };
