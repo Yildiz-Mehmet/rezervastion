@@ -1,5 +1,5 @@
 import { FormControl, Input } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slider";
 import "./Select.css";
 
@@ -16,8 +16,15 @@ const Bottomselect = ({
   var curr = new Date();
   curr.setDate(curr.getDate() + 3);
   var date = curr.toISOString().substring(0, 10);
-  const [values, setValues] = useState([0, 10000000]);
+  const [values, setValues] = useState([0, 100]);
+
   const handleChange = (newValues) => setValues(newValues);
+
+  useEffect(() => {
+    setMaxPrice((maxPrice = values[1]));
+    setMinPrice((minPrice = values[0]));
+  }, [values]);
+
   return (
     <div className="bottomselect">
       <FormControl
@@ -50,13 +57,6 @@ const Bottomselect = ({
             name="minPrice"
             id="minPrice"
             value={values[0]}
-            onChange={
-              ((e) => handleChange([+e.target.value, values[1]]),
-              (e) => {
-                console.log(e.target.value);
-                setMinPrice((minPrice = values[0]));
-              })
-            }
           />
           <span>-</span>
           <input
@@ -64,12 +64,6 @@ const Bottomselect = ({
             name="maxPrice"
             id="maxPrice"
             value={values[1]}
-            onChange={
-              ((e) => handleChange([values[0], +e.target.value]),
-              (e) => {
-                setMaxPrice((maxPrice = e.target.value));
-              })
-            }
           />
         </div>
         <Slider

@@ -32,7 +32,7 @@ const Topselect = ({
   return (
     <div className="topselect">
       <ToggleButtonGroup
-        sx={{ gap: "20px", marginTop: "20px" }}
+        sx={{ gap: "20px", marginTop: "20px", display: { md: "flex-column" } }}
         value={formats}
         onChange={handleFormat}
         aria-label="text formatting"

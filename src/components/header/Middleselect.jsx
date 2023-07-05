@@ -66,7 +66,7 @@ const Middleselect = ({
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          {countryData.map((data, index) => {
+          {countryData?.map((data, index) => {
             return (
               <MenuItem key={index} value={data.country_name}>
                 {data.country_name}
@@ -91,7 +91,7 @@ const Middleselect = ({
             <em>None</em>
           </MenuItem>
 
-          {newCity.map((city, index) => {
+          {newCity?.map((city, index) => {
             return (
               <MenuItem key={index} value={city.state_name}>
                 {city.state_name}

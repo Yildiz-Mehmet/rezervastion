@@ -7,8 +7,30 @@ import Topselect from "./Topselect";
 import Middleselect from "./Middleselect";
 import Bottomselect from "./Bottomselect";
 import { useState } from "react";
+// const cancelCourse = () => {
+//   document.getElementById("clear").reset();
+// };
 
 const Header = () => {
+  const handleClear = () => {
+    setHome(false);
+    setResidence(false);
+    setLand_farm(false);
+    setWorkplace(false);
+    setLake(false);
+    setHistoric(false);
+    setRest_fun(false);
+    setRentsale("");
+    setCountry("");
+    setState("");
+    setRoom("");
+    setRating("");
+    setControl(false);
+    setDate("");
+    setMaxPrice("");
+    setMinPrice("");
+    setSearch("");
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({
@@ -52,7 +74,7 @@ const Header = () => {
 
   return (
     <div className="header">
-      <Box component="form" onSubmit={handleSubmit}>
+      <Box component="form" id="clear" onSubmit={handleSubmit}>
         <Topselect
           home={home}
           setHome={setHome}
@@ -97,7 +119,7 @@ const Header = () => {
           <button className="search" type="submit">
             Search
           </button>
-          <button className="clear" type="button">
+          <button className="clear" type="button" onClick={handleClear}>
             Clear
           </button>
         </Box>
