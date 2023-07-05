@@ -11,7 +11,8 @@ import Support from "../components/navbar/Support";
 import ContactUs from "../components/navbar/ContactUs";
 import Buy from "../components/navbar/Buy";
 import Navbar from "../components/Navbar";
-import { Login } from "@mui/icons-material";
+import Login from "../components/Login";
+import Register from "../components/Register";
 
 const AppRouter = () => {
   return (
@@ -29,6 +30,7 @@ const AppRouter = () => {
         <Route path="contactUs" element={<ContactUs />} />
         <Route path="buy" element={<Buy />} />
         <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
       </Routes>
     </Router>
   );
