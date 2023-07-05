@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Slider from "react-slider";
 import "./Select.css";
 
-const Bottomselect = () => {
+const Bottomselect = ({ setForm, form }) => {
   var curr = new Date();
   curr.setDate(curr.getDate() + 3);
   var date = curr.toISOString().substring(0, 10);
@@ -23,7 +23,14 @@ const Bottomselect = () => {
         }}
         size="small"
       >
-        <Input size="md" name="search" placeholder="Search" />
+        <Input
+          size="md"
+          name="search"
+          placeholder="Search"
+          onChange={(e) => {
+            setForm((form.search = e.target.value));
+          }}
+        />
       </FormControl>
       <div className=" container">
         <div className="values-wrapper">
