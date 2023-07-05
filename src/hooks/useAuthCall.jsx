@@ -1,4 +1,5 @@
 import axios from "axios";
+import { initializeApp } from "firebase/app";
 import {
   fetchFail,
   fetchStart,
@@ -6,6 +7,15 @@ import {
   logoutSuccess,
   registerSuccess,
 } from "../features/authSlice";
+const firebaseConfig = {
+  apiKey: "AIzaSyAhhPCEq2eNmPrcxbVfGpPQ8g1tU8Zd8V0",
+  authDomain: "rezervation-4bc57.firebaseapp.com",
+  projectId: "rezervation-4bc57",
+  storageBucket: "rezervation-4bc57.appspot.com",
+  messagingSenderId: "705310670423",
+  appId: "1:705310670423:web:8ffc0388a0ce5c9df42d12",
+};
+const app = initializeApp(firebaseConfig);
 
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
