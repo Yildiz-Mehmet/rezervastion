@@ -1,5 +1,12 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
+import { toastErrorNotify, toastSuccessNotify } from "./helper/ToastNotify";
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -13,16 +20,26 @@ const auth = getAuth();
 
 export const register = async (email, password) => {
   try {
+    toastSuccessNotify("Register performed");
     const user = await createUserWithEmailAndPassword(auth, email, password);
+
+    return user;
+  } catch (error) {
+    toastErrorNotify("Register can not be performed");
+  }
+};
+export const login = async (email, password) => {
+  try {
+    const user = await signInWithEmailAndPassword(auth, email, password);
     return user;
   } catch (error) {
     console.log(error.message);
   }
 };
-export const login = async (email, password) => {
+export const logout = async () => {
   try {
-    const user = await createUserWithEmailAndPassword(auth, email, password);
-    return user;
+    await signOut(auth);
+    return true;
   } catch (error) {
     console.log(error.message);
   }
