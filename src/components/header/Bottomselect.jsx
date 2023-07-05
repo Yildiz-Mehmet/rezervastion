@@ -1,19 +1,25 @@
 import { FormControl, Input } from "@mui/material";
 import React, { useState } from "react";
-import ReactSlider from "react-slider";
+import Slider from "react-slider";
+import "./Select.css";
 
 const Bottomselect = () => {
-  const [min, setMin] = useState(0);
-  const [max, setMax] = useState(100000000000000);
+  var curr = new Date();
+  curr.setDate(curr.getDate() + 3);
+  var date = curr.toISOString().substring(0, 10);
+  const [values, setValues] = useState([0, 10000000]);
+  const handleChange = (newValues) => setValues(newValues);
   return (
-    <div>
+    <div className="bottomselect">
       <FormControl
         sx={{
           m: 1,
           minWidth: 120,
-          border: "1px solid gray",
+          border: " 0.3px solid rgba(0, 0, 0, 0.1)",
           borderRadius: "5px",
           width: "15rem",
+          marginRight: "20px",
+          outline: "none",
         }}
         size="small"
       >
@@ -22,11 +28,30 @@ const Bottomselect = () => {
       <div className=" container">
         <div className="values-wrapper">
           <span>Price :</span>
-          <input type="text" value={min} />
+          <input
+            type="number"
+            id="minPrice"
+            value={values[0]}
+            onChange={(e) => handleChange([+e.target.value, values[1]])}
+          />
           <span>-</span>
-          <input type="text" value={max} />
+          <input
+            type="number"
+            id="maxPrice"
+            value={values[1]}
+            onChange={(e) => handleChange([values[0], +e.target.value])}
+          />
         </div>
+        <Slider
+          className="slider"
+          value={values}
+          onChange={handleChange}
+          step={100}
+          min={0}
+          max={10000000}
+        />
       </div>
+      <input type="date" defaultValue={date} />
     </div>
   );
 };
