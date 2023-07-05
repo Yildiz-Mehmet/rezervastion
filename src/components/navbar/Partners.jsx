@@ -1,7 +1,12 @@
 import React from "react";
+import Navbar from "../Navbar";
 
 const Partners = () => {
-  return <div>Partners</div>;
+  return (
+    <div>
+      <Navbar />
+    </div>
+  );
 };
 
 export default Partners;

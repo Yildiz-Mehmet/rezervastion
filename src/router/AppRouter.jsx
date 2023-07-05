@@ -13,11 +13,11 @@ import Buy from "../components/navbar/Buy";
 import Navbar from "../components/Navbar";
 import Login from "../components/Login";
 import Register from "../components/Register";
+import Profile from "../components/navbar/Profile";
 
 const AppRouter = () => {
   return (
     <Router>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="agents" element={<Agents />} />
@@ -29,6 +29,7 @@ const AppRouter = () => {
         <Route path="support" element={<Support />} />
         <Route path="contactUs" element={<ContactUs />} />
         <Route path="buy" element={<Buy />} />
+        <Route path="profile" element={<Profile />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
       </Routes>

@@ -13,13 +13,14 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { logout } from "../firebase";
 
 import "./Navbar.css";
 import logo from "../assets/logo.png";
 
 const settings = [
   { title: "Profile", url: "/profile" },
-  { title: "Login", url: "/login" },
+
   { title: "Logout", url: "/logout" },
 ];
 
@@ -200,7 +201,12 @@ function Navbar() {
                 <MenuItem
                   key={index}
                   onClick={() => {
-                    navigate(setting.url);
+                    if (setting.title === "Logout") {
+                      logout();
+                      navigate("/login");
+                    } else {
+                      navigate(setting.url);
+                    }
                   }}
                 >
                   <Typography textAlign="center">{setting.title}</Typography>

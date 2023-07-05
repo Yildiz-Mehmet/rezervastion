@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../Navbar";
 
-const ContactUs = () => {
+const Profile = () => {
   return (
     <div>
       <Navbar />
@@ -9,4 +9,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default Profile;

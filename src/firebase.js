@@ -30,18 +30,20 @@ export const register = async (email, password) => {
 };
 export const login = async (email, password) => {
   try {
+    toastSuccessNotify("Login performed");
     const user = await signInWithEmailAndPassword(auth, email, password);
     return user;
   } catch (error) {
-    console.log(error.message);
+    toastErrorNotify("Login can not be performed");
   }
 };
 export const logout = async () => {
   try {
+    toastSuccessNotify("Logout performed");
     await signOut(auth);
     return true;
   } catch (error) {
-    console.log(error.message);
+    toastErrorNotify("Logout can not be performed");
   }
 };
 
