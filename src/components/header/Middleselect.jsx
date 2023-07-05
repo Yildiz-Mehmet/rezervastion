@@ -26,6 +26,10 @@ const Middleselect = ({
 }) => {
   const [value, setValue] = React.useState(2);
 
+  const stated = countryData.find(({ country_name }) => {
+    return country_name === country;
+  });
+  const newCity = stated?.states;
   return (
     <div className="middle">
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
@@ -86,9 +90,14 @@ const Middleselect = ({
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+
+          {newCity.map((city, index) => {
+            return (
+              <MenuItem key={index} value={city.state_name}>
+                {city.state_name}
+              </MenuItem>
+            );
+          })}
         </Select>
       </FormControl>
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
