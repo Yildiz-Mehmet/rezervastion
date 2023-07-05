@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
-const Topselect = ({ setForm, form }) => {
+const Topselect = ({
+  home,
+  setHome,
+  residence,
+  setResidence,
+  land_farm,
+  setLand_farm,
+  workplace,
+  setWorkplace,
+  lake,
+  setLake,
+  historic,
+  setHistoric,
+  rest_fun,
+  setRest_fun,
+}) => {
   const [formats, setFormats] = React.useState(() => ["bold", "italic"]);
 
   const handleFormat = (event, newFormats) => {
@@ -26,7 +41,7 @@ const Topselect = ({ setForm, form }) => {
           value="home"
           name="home"
           onClick={() => {
-            setForm(!form.home);
+            setHome(!home);
           }}
         >
           HOME
@@ -36,7 +51,7 @@ const Topselect = ({ setForm, form }) => {
           value="residence"
           name="residence"
           onClick={() => {
-            setForm(!form.residence);
+            setResidence(!residence);
           }}
         >
           RESIDENCE
@@ -46,7 +61,7 @@ const Topselect = ({ setForm, form }) => {
           value="land_farm"
           name="land_farm"
           onClick={() => {
-            setForm(!form.land_farm);
+            setLand_farm(!land_farm);
           }}
         >
           LAND/FARM
@@ -56,7 +71,7 @@ const Topselect = ({ setForm, form }) => {
           value="workplace"
           name="workplace"
           onClick={() => {
-            setForm(!form.workplace);
+            setWorkplace(!workplace);
           }}
         >
           WORKPLACE
@@ -66,7 +81,7 @@ const Topselect = ({ setForm, form }) => {
           value="lake"
           name="lake"
           onClick={() => {
-            setForm(!form.lake);
+            setLake(!lake);
           }}
         >
           LAKE
@@ -76,7 +91,7 @@ const Topselect = ({ setForm, form }) => {
           value="historic"
           name="historic"
           onClick={() => {
-            setForm(!form.historic);
+            setHistoric(!historic);
           }}
         >
           HISTORIC
@@ -86,7 +101,7 @@ const Topselect = ({ setForm, form }) => {
           value="rest_fun"
           name="rest_fun"
           onClick={() => {
-            setForm(!form.rest_fun);
+            setRest_fun(!rest_fun);
           }}
         >
           REST/FUN

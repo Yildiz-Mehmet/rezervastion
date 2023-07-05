@@ -40,7 +40,12 @@ const Bottomselect = ({ setForm, form }) => {
             name="minPrice"
             id="minPrice"
             value={values[0]}
-            onChange={(e) => handleChange([+e.target.value, values[1]])}
+            onChange={
+              ((e) => handleChange([+e.target.value, values[1]]),
+              (e) => {
+                setForm((form.minPrice = e.target.value));
+              })
+            }
           />
           <span>-</span>
           <input
@@ -48,7 +53,12 @@ const Bottomselect = ({ setForm, form }) => {
             name="maxPrice"
             id="maxPrice"
             value={values[1]}
-            onChange={(e) => handleChange([values[0], +e.target.value])}
+            onChange={
+              ((e) => handleChange([values[0], +e.target.value]),
+              (e) => {
+                setForm((form.maxPrice = e.target.value));
+              })
+            }
           />
         </div>
         <Slider
@@ -60,7 +70,14 @@ const Bottomselect = ({ setForm, form }) => {
           max={10000000}
         />
       </div>
-      <input type="date" name="date" defaultValue={date} />
+      <input
+        type="date"
+        name="date"
+        onChange={(e) => {
+          setForm((form.date = e.target.value));
+        }}
+        defaultValue={date}
+      />
     </div>
   );
 };

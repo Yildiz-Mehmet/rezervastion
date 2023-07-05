@@ -9,7 +9,20 @@ import Rating from "@mui/material/Rating";
 import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import "./Select.css";
 
-const Middleselect = ({ setForm, form }) => {
+const Middleselect = ({
+  rentsale,
+  setRentsale,
+  country,
+  setCountry,
+  state,
+  setState,
+  room,
+  setRoom,
+  rating,
+  setRating,
+  control,
+  setControl,
+}) => {
   const [value, setValue] = React.useState(2);
 
   return (
@@ -20,10 +33,10 @@ const Middleselect = ({ setForm, form }) => {
           labelId="demo-select-small-label"
           id="demo-select-small"
           name="rent_sale"
-          value={form.rent_sale}
+          value=""
           label="rent_sale"
           onChange={(e) => {
-            form.rent_sale = e.target.value;
+            setRentsale((rentsale = e.target.value));
           }}
         >
           <MenuItem value="">
@@ -39,10 +52,10 @@ const Middleselect = ({ setForm, form }) => {
           labelId="demo-select-small-label"
           id="demo-select-small"
           name="country"
-          value={form.country}
+          value=""
           label="country"
           onChange={(e) => {
-            form.country = e.target.value;
+            setCountry((country = e.target.value));
           }}
         >
           <MenuItem value="">
@@ -59,10 +72,10 @@ const Middleselect = ({ setForm, form }) => {
           labelId="demo-select-small-label"
           id="demo-select-small"
           name="state"
-          value="age"
-          label="Age"
+          value="State"
+          label="State"
           onChange={(e) => {
-            form.state = e.target.value;
+            setState((state = e.target.value));
           }}
         >
           <MenuItem value="">
@@ -79,27 +92,27 @@ const Middleselect = ({ setForm, form }) => {
           labelId="demo-select-small-label"
           id="demo-select-small"
           name="room"
-          value="age"
-          label="Age"
+          value="room"
+          label="Room"
           onChange={(e) => {
-            form.room = e.target.value;
+            setRoom((room = e.target.value));
           }}
         >
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value="1+1">1+1</MenuItem>
+          <MenuItem value="2+1">2+1</MenuItem>
+          <MenuItem value="3+1">3+1</MenuItem>
         </Select>
       </FormControl>
 
       <Rating
         sx={{ paddingY: "17px" }}
         name="rating"
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
+        value={2}
+        onChange={(e) => {
+          setRating((rating = e.target.defaultValue));
         }}
       />
       <FormGroup
@@ -111,7 +124,7 @@ const Middleselect = ({ setForm, form }) => {
           sx={{ marginBottom: "15px", marginLeft: "5px" }}
           control={<Checkbox />}
           onClick={() => {
-            setForm(!form.control);
+            setControl(!control);
           }}
           name="control"
           label="ReSale"
