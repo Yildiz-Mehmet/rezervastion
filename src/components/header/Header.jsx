@@ -14,6 +14,14 @@ const Header = () => {
         <Topselect />
         <Middleselect />
         <Bottomselect />
+        <Box sx={{ marginTop: "30px" }}>
+          <button className="search" type="button">
+            Search
+          </button>
+          <button className="clear" type="button">
+            Clear
+          </button>
+        </Box>
       </Box>
     </div>
   );

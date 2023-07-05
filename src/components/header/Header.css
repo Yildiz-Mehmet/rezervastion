@@ -9,3 +9,21 @@
   width: 80vw;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
+button {
+  border: none;
+  padding: 12px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
+}
+.search {
+  margin-right: 20px;
+  background-color: rgb(139, 211, 49);
+  width: 350px;
+}
+.clear {
+  background-color: rgb(240, 136, 99);
+  width: 70px;
+}
