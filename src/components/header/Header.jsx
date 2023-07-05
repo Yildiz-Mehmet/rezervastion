@@ -7,9 +7,9 @@ import Topselect from "./Topselect";
 import Middleselect from "./Middleselect";
 import Bottomselect from "./Bottomselect";
 import { useState } from "react";
-// const cancelCourse = () => {
-//   document.getElementById("clear").reset();
-// };
+const cancelCourse = () => {
+  window.location.reload();
+};
 
 const Header = () => {
   const handleClear = () => {
@@ -30,6 +30,7 @@ const Header = () => {
     setMaxPrice("");
     setMinPrice("");
     setSearch("");
+    cancelCourse();
   };
   const handleSubmit = (e) => {
     e.preventDefault();
