@@ -1,7 +1,7 @@
 import { Box, Typography, Container } from "@mui/material";
 import React from "react";
-import handle from "../assets/el.ico";
-import handle2 from "../assets/el2.jpeg";
+import handle from "../assets/el.png";
+import handle2 from "../assets/el1.png";
 import box from "../assets/box2.jpg";
 
 const Footer = () => {
@@ -47,6 +47,9 @@ const Footer = () => {
           }}
         >
           <img src={handle} width={70} alt="" />
+          <Typography sx={{ display: "inline-block" }}>
+            Buy Advertisement
+          </Typography>
         </Box>
         <Box
           sx={{
@@ -58,6 +61,7 @@ const Footer = () => {
           }}
         >
           <img src={handle2} width={70} alt="" />
+          <Typography sx={{ display: "inline-block" }}>Be Agent</Typography>
         </Box>
         <Box
           sx={{
@@ -69,6 +73,9 @@ const Footer = () => {
           }}
         >
           <img src={box} width={70} alt="" />
+          <Typography sx={{ display: "inline-block" }}>
+            Agent Profile
+          </Typography>
         </Box>
       </Container>
     </Box>
