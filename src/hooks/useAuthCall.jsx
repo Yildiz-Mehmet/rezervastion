@@ -26,7 +26,7 @@ const useAuthCall = () => {
       );
       dispatch(loginSuccess(data));
       toastSuccessNotify("Login performed");
-      navigate("/stock");
+      navigate("/");
       console.log(data);
     } catch (error) {
       dispatch(fetchFail());
@@ -40,7 +40,7 @@ const useAuthCall = () => {
       await axios.post(`${BASE_URL}account/auth/logout/`);
       dispatch(logoutSuccess());
       toastSuccessNotify("Logout performed");
-      navigate("/");
+      navigate("/login");
     } catch (err) {
       dispatch(fetchFail());
       toastErrorNotify("Logout can not be performed");
@@ -57,7 +57,7 @@ const useAuthCall = () => {
       console.log(data);
       dispatch(registerSuccess(data));
       toastSuccessNotify("Register performed");
-      navigate("/stock");
+      navigate("/login");
     } catch (err) {
       dispatch(fetchFail());
       toastErrorNotify("Register can not be performed");
