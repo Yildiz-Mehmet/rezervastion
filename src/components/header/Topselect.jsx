@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import "./Select.css";
 
 const Topselect = ({
   home,
@@ -29,9 +30,9 @@ const Topselect = ({
     fontSize: "12px",
   };
   return (
-    <div>
+    <div className="topselect">
       <ToggleButtonGroup
-        sx={{ gap: "40px", marginTop: "20px" }}
+        sx={{ gap: "20px", marginTop: "20px" }}
         value={formats}
         onChange={handleFormat}
         aria-label="text formatting"

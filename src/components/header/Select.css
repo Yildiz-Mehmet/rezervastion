@@ -48,3 +48,6 @@ span {
 .bottomselect {
   margin-top: 30px;
 }
+.topselect {
+  width: 100%;
+}

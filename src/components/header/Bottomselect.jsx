@@ -36,6 +36,7 @@ const Bottomselect = ({
           size="md"
           name="search"
           placeholder="Search"
+          value={search}
           onChange={(e) => {
             setSearch((search = e.target.value));
           }}
@@ -52,7 +53,8 @@ const Bottomselect = ({
             onChange={
               ((e) => handleChange([+e.target.value, values[1]]),
               (e) => {
-                setMinPrice((minPrice = e.target.value));
+                console.log(e.target.value);
+                setMinPrice((minPrice = values[0]));
               })
             }
           />

@@ -33,7 +33,7 @@ const Middleselect = ({
           labelId="demo-select-small-label"
           id="demo-select-small"
           name="rent_sale"
-          value=""
+          value={rentsale}
           label="rent_sale"
           onChange={(e) => {
             setRentsale((rentsale = e.target.value));
@@ -52,7 +52,7 @@ const Middleselect = ({
           labelId="demo-select-small-label"
           id="demo-select-small"
           name="country"
-          value=""
+          value={country}
           label="country"
           onChange={(e) => {
             setCountry((country = e.target.value));
@@ -72,7 +72,7 @@ const Middleselect = ({
           labelId="demo-select-small-label"
           id="demo-select-small"
           name="state"
-          value="State"
+          value={state}
           label="State"
           onChange={(e) => {
             setState((state = e.target.value));
@@ -92,7 +92,7 @@ const Middleselect = ({
           labelId="demo-select-small-label"
           id="demo-select-small"
           name="room"
-          value="room"
+          value={room}
           label="Room"
           onChange={(e) => {
             setRoom((room = e.target.value));
@@ -110,7 +110,7 @@ const Middleselect = ({
       <Rating
         sx={{ paddingY: "17px" }}
         name="rating"
-        value={2}
+        value={Number(rating)}
         onChange={(e) => {
           setRating((rating = e.target.defaultValue));
         }}
