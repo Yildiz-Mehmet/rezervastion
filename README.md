@@ -68,3 +68,26 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<!--
+       <ReactSlider
+            defaultValue={[min, max]}
+            className="slider"
+            trackClassName="tracker"
+            min={0}
+            max={100000000000000}
+            minDistance={50}
+            step={50}
+            withTracks={true}
+            pearling={true}
+            renderThumb={(props) => {
+              return <div {...props} className="thumb"></div>;
+            }}
+            renderTrack={(props) => {
+              return <div {...props} className="track"></div>;
+            }}
+            onChange={([min, max]) => {
+              setMin(min);
+              setMax(max);
+            }}
+          /> -->
