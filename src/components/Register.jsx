@@ -14,7 +14,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 
-import { register } from "../firebase";
+import useAuthCall, { register } from "../firebase";
 import { useState } from "react";
 
 function Copyright(props) {
@@ -40,6 +40,7 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function Register() {
+  const { register } = useAuthCall();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
