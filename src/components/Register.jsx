@@ -12,6 +12,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import useAuthCall from "../hooks/useAuthCall";
 
 function Copyright(props) {
   return (
@@ -36,10 +37,14 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function Register() {
+  const { register } = useAuthCall();
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
+    register({
+      username: data.get("userName"),
+      first_name: data.get("firstName"),
+      last_name: data.get("lastName"),
       email: data.get("email"),
       password: data.get("password"),
     });
@@ -73,17 +78,25 @@ export default function Register() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
+                  name="userName"
+                  fullWidth
+                  id="userName"
+                  label="UserName"
+                  autoFocus
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  autoComplete="given-name"
                   name="firstName"
-                  required
                   fullWidth
                   id="firstName"
                   label="First Name"
                   autoFocus
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <TextField
-                  required
                   fullWidth
                   id="lastName"
                   label="Last Name"
