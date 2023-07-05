@@ -11,6 +11,25 @@ import { useState } from "react";
 const Header = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log({
+      home: home,
+      residence: residence,
+      land_farm: land_farm,
+      workplace: workplace,
+      lake: lake,
+      historic: historic,
+      rest_fun: rest_fun,
+      rentsale: rentsale,
+      country: country,
+      state: state,
+      room: room,
+      rating: rating,
+      control: control,
+      date: date,
+      maxPrice: maxPrice,
+      minPrice: minPrice,
+      search: search,
+    });
   };
 
   const [home, setHome] = useState(false);
@@ -20,16 +39,16 @@ const Header = () => {
   const [lake, setLake] = useState(false);
   const [historic, setHistoric] = useState(false);
   const [rest_fun, setRest_fun] = useState(false);
-  const [rentsale, setRentsale] = useState(false);
-  const [country, setCountry] = useState(false);
-  const [state, setState] = useState(false);
-  const [room, setRoom] = useState(false);
-  const [rating, setRating] = useState(false);
+  const [rentsale, setRentsale] = useState("");
+  const [country, setCountry] = useState("");
+  const [state, setState] = useState("");
+  const [room, setRoom] = useState("");
+  const [rating, setRating] = useState("");
   const [control, setControl] = useState(false);
-  const [date, setDate] = useState(false);
-  const [maxPrice, setMaxPrice] = useState(false);
-  const [minPrice, setMinPrice] = useState(false);
-  const [search, setSearch] = useState(false);
+  const [date, setDate] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+  const [minPrice, setMinPrice] = useState("");
+  const [search, setSearch] = useState("");
 
   return (
     <div className="header">

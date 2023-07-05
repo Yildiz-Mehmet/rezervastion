@@ -3,7 +3,16 @@ import React, { useState } from "react";
 import Slider from "react-slider";
 import "./Select.css";
 
-const Bottomselect = ({ setForm, form }) => {
+const Bottomselect = ({
+  date,
+  setDate,
+  maxPrice,
+  setMaxPrice,
+  minPrice,
+  setMinPrice,
+  search,
+  setSearch,
+}) => {
   var curr = new Date();
   curr.setDate(curr.getDate() + 3);
   var date = curr.toISOString().substring(0, 10);
@@ -28,7 +37,7 @@ const Bottomselect = ({ setForm, form }) => {
           name="search"
           placeholder="Search"
           onChange={(e) => {
-            setForm((form.search = e.target.value));
+            setSearch((search = e.target.value));
           }}
         />
       </FormControl>
@@ -43,7 +52,7 @@ const Bottomselect = ({ setForm, form }) => {
             onChange={
               ((e) => handleChange([+e.target.value, values[1]]),
               (e) => {
-                setForm((form.minPrice = e.target.value));
+                setMinPrice((minPrice = e.target.value));
               })
             }
           />
@@ -56,7 +65,7 @@ const Bottomselect = ({ setForm, form }) => {
             onChange={
               ((e) => handleChange([values[0], +e.target.value]),
               (e) => {
-                setForm((form.maxPrice = e.target.value));
+                setMaxPrice((maxPrice = e.target.value));
               })
             }
           />
@@ -74,7 +83,7 @@ const Bottomselect = ({ setForm, form }) => {
         type="date"
         name="date"
         onChange={(e) => {
-          setForm((form.date = e.target.value));
+          setDate((date = e.target.value));
         }}
         defaultValue={date}
       />
