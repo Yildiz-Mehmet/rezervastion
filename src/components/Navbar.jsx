@@ -12,11 +12,16 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 import "./Navbar.css";
 import logo from "../assets/logo.png";
 
-const settings = ["Profile", "Logout"];
+const settings = [
+  { title: "Profile", url: "/profile" },
+  { title: "Login", url: "/login" },
+  { title: "Logout", url: "/logout" },
+];
 
 const pages = [
   {
@@ -71,6 +76,7 @@ const pages = [
 ];
 
 function Navbar() {
+  const [currentUser, setCurrentUser] = useState(true);
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -190,9 +196,20 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+              {settings.map((setting, index) => (
+                <MenuItem
+                  key={index}
+                  onClick={() => {
+                    navigate(setting.url);
+                    if (
+                      setting.title === "Login" ||
+                      setting.title === "Logout"
+                    ) {
+                      setCurrentUser(!currentUser);
+                    }
+                  }}
+                >
+                  <Typography textAlign="center">{setting.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
