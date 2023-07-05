@@ -1,4 +1,4 @@
-export const countryData = [
+const countryData = [
   {
     country_id: "1",
     sortname: "AF",
@@ -6434,3 +6434,5 @@ export const countryData = [
     ],
   },
 ];
+
+export default countryData;

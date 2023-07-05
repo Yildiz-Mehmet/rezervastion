@@ -62,9 +62,13 @@ const Middleselect = ({
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          {countryData.map((data, index) => {
+            return (
+              <MenuItem key={index} value={data.country_name}>
+                {data.country_name}
+              </MenuItem>
+            );
+          })}
         </Select>
       </FormControl>
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
