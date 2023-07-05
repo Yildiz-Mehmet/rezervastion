@@ -141,7 +141,7 @@ function Navbar() {
                     navigate(page.url);
                   }}
                 >
-                  <Typography color="#ff8c00" textAlign="center">
+                  <Typography color="#rgb(239, 137, 47)" textAlign="center">
                     {page.title}
                   </Typography>
                 </MenuItem>
@@ -160,7 +160,7 @@ function Navbar() {
                   my: 2,
                   color: "white",
                   display: "block",
-                  color: "orange",
+                  color: "rgb(237, 129, 35)",
                 }}
               >
                 {page.title}
