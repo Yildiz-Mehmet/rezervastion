@@ -201,12 +201,6 @@ function Navbar() {
                   key={index}
                   onClick={() => {
                     navigate(setting.url);
-                    if (
-                      setting.title === "Login" ||
-                      setting.title === "Logout"
-                    ) {
-                      setCurrentUser(!currentUser);
-                    }
                   }}
                 >
                   <Typography textAlign="center">{setting.title}</Typography>
