@@ -12,7 +12,9 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import useAuthCall from "../hooks/useAuthCall";
+
+import { register } from "../firebase";
+import { useState } from "react";
 
 function Copyright(props) {
   return (
@@ -37,17 +39,13 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function Register() {
-  const { register } = useAuthCall();
-  const handleSubmit = (event) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    register({
-      username: data.get("userName"),
-      first_name: data.get("firstName"),
-      last_name: data.get("lastName"),
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+
+    const user = await register(email, password);
   };
 
   return (
@@ -112,6 +110,9 @@ export default function Register() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -123,6 +124,9 @@ export default function Register() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
                 />
               </Grid>
             </Grid>
