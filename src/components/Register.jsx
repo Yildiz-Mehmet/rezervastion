@@ -51,7 +51,7 @@ export default function Register() {
     const user = await register(email, password);
     setEmail("");
     setPassword("");
-    navigate("/login");
+    navigate("/");
   };
 
   return (

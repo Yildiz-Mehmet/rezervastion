@@ -19,7 +19,8 @@ const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="home" element={<Home />} />
         <Route path="agents" element={<Agents />} />
         <Route path="pricing" element={<Pricing />} />
         <Route path="partners" element={<Partners />} />
@@ -30,7 +31,7 @@ const AppRouter = () => {
         <Route path="contactUs" element={<ContactUs />} />
         <Route path="buy" element={<Buy />} />
         <Route path="profile" element={<Profile />} />
-        <Route path="login" element={<Login />} />
+
         <Route path="register" element={<Register />} />
       </Routes>
     </Router>

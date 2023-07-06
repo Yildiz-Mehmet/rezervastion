@@ -49,7 +49,7 @@ export default function Login() {
     const user = await login(email, password);
     setEmail("");
     setPassword("");
-    navigate("/");
+    navigate("/home");
   };
 
   return (

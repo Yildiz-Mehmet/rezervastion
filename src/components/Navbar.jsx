@@ -27,7 +27,7 @@ const settings = [
 const pages = [
   {
     title: "Home",
-    url: "/",
+    url: "/home",
   },
   {
     title: "Agents",
@@ -204,7 +204,7 @@ function Navbar() {
                   onClick={() => {
                     if (setting.title === "Logout") {
                       logout();
-                      navigate("/login");
+                      navigate("/");
                     } else {
                       navigate(setting.url);
                     }
