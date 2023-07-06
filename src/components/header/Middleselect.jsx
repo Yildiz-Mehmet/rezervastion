@@ -7,7 +7,7 @@ import countryData from "../../moke.js";
 
 import Rating from "@mui/material/Rating";
 
-import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
+import { Box, Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import "./Select.css";
 
 const Middleselect = ({
@@ -31,7 +31,10 @@ const Middleselect = ({
   });
   const newCity = stated?.states;
   return (
-    <div className="middle">
+    <Box
+      className="middle"
+      sx={{ display: { xs: "inline-grid", md: "block" } }}
+    >
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
         <InputLabel id="demo-select-small-label">Rent/Sale</InputLabel>
         <Select
@@ -144,7 +147,7 @@ const Middleselect = ({
           label="ReSale"
         />
       </FormGroup>
-    </div>
+    </Box>
   );
 };
 export default Middleselect;

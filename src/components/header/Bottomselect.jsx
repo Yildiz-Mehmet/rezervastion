@@ -1,4 +1,4 @@
-import { FormControl, Input } from "@mui/material";
+import { Box, FormControl, Input } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Slider from "react-slider";
 import "./Select.css";
@@ -26,7 +26,10 @@ const Bottomselect = ({
   }, [values]);
 
   return (
-    <div className="bottomselect">
+    <Box
+      sx={{ display: { xs: "inline-grid", md: "block" }, gap: "15px" }}
+      className="bottomselect"
+    >
       <FormControl
         sx={{
           m: 1,
@@ -83,7 +86,7 @@ const Bottomselect = ({
         }}
         defaultValue={date}
       />
-    </div>
+    </Box>
   );
 };
 

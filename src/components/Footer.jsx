@@ -11,14 +11,14 @@ const Footer = () => {
   return (
     <Box
       sx={{
+        marginBottom: { sm: "30px" },
         width: "80vw",
-
         position: "absolute",
+        top: { sm: "70rem", xs: "85rem", md: "40rem" },
         left: "10vw",
-        top: "45rem",
         backgroundColor: "azure",
         borderRadius: "10px",
-        height: "10rem",
+        minHeight: "10rem",
         width: "80vw",
         boxShadow:
           "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
@@ -36,9 +36,12 @@ const Footer = () => {
       >
         Touch you life goals easy...
       </Typography>
-      <Container
-        maxWidth="lg"
-        sx={{ display: "flex", justifyContent: "space-evenly" }}
+      <Box
+        sx={{
+          display: { xs: "grid", md: "flex" },
+          justifyContent: "space-evenly",
+          gap: { xs: "20px", md: "2px" },
+        }}
       >
         <Box
           component="button"
@@ -49,7 +52,7 @@ const Footer = () => {
             boxShadow:
               "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
             borderRadius: "10px",
-            width: "25vw",
+            minWidth: "25vw",
             height: "5rem",
             display: "flex",
             alignItems: "center",
@@ -72,7 +75,7 @@ const Footer = () => {
             boxShadow:
               "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
             borderRadius: "10px",
-            width: "25vw",
+            minWidth: "25vw",
             height: "5rem",
             display: "flex",
             alignItems: "center",
@@ -101,7 +104,7 @@ const Footer = () => {
             boxShadow:
               "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
             borderRadius: "10px",
-            width: "25vw",
+            minWidth: "25vw",
             height: "5rem",
             display: "flex",
             alignItems: "center",
@@ -118,7 +121,7 @@ const Footer = () => {
             NEW
           </Button>
         </Box>
-      </Container>
+      </Box>
     </Box>
   );
 };
