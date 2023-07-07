@@ -1,4 +1,4 @@
-Link: (https://rezervation.vercel.app/register)
+Link: (https://rezervation.vercel.app)
 
 
 # Getting Started with Create React App
